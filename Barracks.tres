@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://ctnkwuxpbhro4"]
+
+[ext_resource type="Script" uid="uid://ugphgclv04a2" path="res://building.gd" id="1_ikeo8"]
+
+[resource]
+script = ExtResource("1_ikeo8")
+id = "barracks"
+display_name = "Barracks"
+letter = "B"
+build_cost = {
+"clay": 20,
+"wood": 60
+}
+build_time_seconds = 12.0
+type = 2
+metadata/_custom_type_script = "uid://ugphgclv04a2"

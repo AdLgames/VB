@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="VillageBuilder"
+run/main_scene="uid://dq2xfufw0m7m3"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+ResourceManager="*uid://vft43aswpev2"
+ArmyManager="*uid://b0ip5l3ky1gtn"
+BuildRequirements="*uid://c2npj2p7wmnve"
+GameConfig="*uid://cnn1fj4ny8efm"
+
+[display]
+
+window/size/initial_position_type=0
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

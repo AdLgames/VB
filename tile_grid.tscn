@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://dq2xfufw0m7m3"]
+
+[ext_resource type="Script" uid="uid://dhd55o7wd5vmw" path="res://tile_grid.gd" id="1_82m1h"]
+[ext_resource type="Script" uid="uid://bbdn7d44mkpfw" path="res://build_queue.gd" id="2_nv114"]
+[ext_resource type="Script" uid="uid://byabtmcya0q51" path="res://production_ticker.gd" id="3_jn8vh"]
+[ext_resource type="Script" uid="uid://b7ot2gug3bj62" path="res://ui_panel.gd" id="3_q0rt0"]
+[ext_resource type="Script" uid="uid://b7qifubms5jaf" path="res://villager_manager.gd" id="4_sfv6b"]
+[ext_resource type="Script" uid="uid://cqsg3gtm3q4y5" path="res://villager_view.gd" id="5_mluhk"]
+[ext_resource type="Script" uid="uid://cvfdtdo3q0l1o" path="res://Contents/save_manager.gd" id="7_yx4b4"]
+
+[node name="TileGrid" type="Node2D" unique_id=1074821481]
+script = ExtResource("1_82m1h")
+
+[node name="GridDisplay" type="GridContainer" parent="." unique_id=1533015591]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuildQueue" type="Node" parent="." unique_id=639979303]
+script = ExtResource("2_nv114")
+
+[node name="ProductionTicker" type="Node" parent="." unique_id=1940416395]
+script = ExtResource("3_jn8vh")
+
+[node name="TickTimer" type="Timer" parent="ProductionTicker" unique_id=1293688467]
+wait_time = 0.5
+autostart = true
+
+[node name="UIPanel" type="Control" parent="." unique_id=1596502021]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_q0rt0")
+
+[node name="StatsPanel" type="PanelContainer" parent="UIPanel" unique_id=364046108]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="StatsBox" type="HBoxContainer" parent="UIPanel/StatsPanel" unique_id=1685580409]
+layout_mode = 2
+
+[node name="WoodLabel" type="Label" parent="UIPanel/StatsPanel/StatsBox" unique_id=980362669]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="ClayLabel" type="Label" parent="UIPanel/StatsPanel/StatsBox" unique_id=1499358029]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="IronLabel" type="Label" parent="UIPanel/StatsPanel/StatsBox" unique_id=865086583]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="ArmyLabel" type="Label" parent="UIPanel/StatsPanel/StatsBox" unique_id=1643858931]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="PopulationLabel" type="Label" parent="UIPanel/StatsPanel/StatsBox" unique_id=602362605]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="UIPanel/StatsPanel/StatsBox" unique_id=651292734]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="BuildPanel" type="PanelContainer" parent="UIPanel" unique_id=1972753947]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="BuildButtonsBox" type="VBoxContainer" parent="UIPanel/BuildPanel" unique_id=1902480966]
+layout_mode = 2
+
+[node name="HallButton" type="Button" parent="UIPanel/BuildPanel/BuildButtonsBox" unique_id=620032155]
+layout_mode = 2
+text = "Build Hall"
+
+[node name="FarmButton" type="Button" parent="UIPanel/BuildPanel/BuildButtonsBox" unique_id=75079257]
+layout_mode = 2
+text = "Build Farm"
+
+[node name="LumberButton" type="Button" parent="UIPanel/BuildPanel/BuildButtonsBox" unique_id=423322905]
+layout_mode = 2
+text = "Build Lumber Camp"
+
+[node name="BarracksButton" type="Button" parent="UIPanel/BuildPanel/BuildButtonsBox" unique_id=1001894086]
+layout_mode = 2
+text = "Build Barracks"
+
+[node name="QueueBox" type="VBoxContainer" parent="UIPanel" unique_id=1553828845]
+layout_mode = 0
+offset_right = 161.0
+offset_bottom = 136.0
+mouse_filter = 2
+
+[node name="TrainPanel" type="PanelContainer" parent="UIPanel" unique_id=1058368428]
+layout_mode = 0
+offset_right = 131.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="TrainSpearmanButton" type="Button" parent="UIPanel/TrainPanel" unique_id=159336862]
+layout_mode = 2
+text = "Train Spearman"
+
+[node name="VillagerPanel" type="Control" parent="UIPanel" unique_id=1146353108]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="VillagerInfoLabel" type="Label" parent="UIPanel/VillagerPanel" unique_id=1076057893]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VillagerButtonsBox" type="HBoxContainer" parent="UIPanel/VillagerPanel" unique_id=1573417258]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlusButton" type="Button" parent="UIPanel/VillagerPanel/VillagerButtonsBox" unique_id=2012117721]
+layout_mode = 2
+text = "+"
+
+[node name="MinusButton" type="Button" parent="UIPanel/VillagerPanel/VillagerButtonsBox" unique_id=2007144844]
+layout_mode = 2
+text = "-"
+
+[node name="CloseButton" type="Button" parent="UIPanel/VillagerPanel" unique_id=317630304]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Close"
+
+[node name="SaveButton" type="Button" parent="UIPanel" unique_id=860111507]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Save"
+
+[node name="VillagerManager" type="Node" parent="." unique_id=950339600]
+script = ExtResource("4_sfv6b")
+
+[node name="VillagerView" type="Node2D" parent="." unique_id=648796963]
+script = ExtResource("5_mluhk")
+
+[node name="SaveManager" type="Node" parent="." unique_id=1569090318]
+script = ExtResource("7_yx4b4")

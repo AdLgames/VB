@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://b50sdkd67idf8"]
+
+[ext_resource type="Script" uid="uid://ugphgclv04a2" path="res://building.gd" id="1_nevdg"]
+
+[resource]
+script = ExtResource("1_nevdg")
+id = "hall"
+display_name = "Hall"
+letter = "H"
+build_cost = {
+"wood": 50
+}
+build_time_seconds = 10.0
+type = 1
+metadata/_custom_type_script = "uid://ugphgclv04a2"

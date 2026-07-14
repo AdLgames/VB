@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://ca0p2f23cph36"]
+
+[ext_resource type="Script" uid="uid://ugphgclv04a2" path="res://building.gd" id="1_v4wex"]
+
+[resource]
+script = ExtResource("1_v4wex")
+id = "lumber_camp"
+display_name = "Lumber Camp"
+letter = "L"
+build_time_seconds = 8.0
+output_resource = "wood"
+output_amount_per_tick = 2
+metadata/_custom_type_script = "uid://ugphgclv04a2"
